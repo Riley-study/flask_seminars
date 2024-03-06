@@ -4,7 +4,7 @@
 
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 
 @app.route('/')
@@ -13,18 +13,19 @@ def home_page():
 
 
 @app.route('/bakery/')
-def about():
+def bakery():
     return render_template('bakery.html')
 
 
 @app.route('/meat_pies/')
-def about():
+def meat_pies():
     return render_template('meat_pies')
 
 
-@app.route('/Snacks_and_salads/')
-def about():
-    return render_template('Snacks_and_salads')
+@app.route('/snacks_and_salads/')
+def snacks_and_salads():
+    return render_template('snacks_and_salads')
+
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
