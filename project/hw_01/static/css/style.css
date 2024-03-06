@@ -1,0 +1,13 @@
+body {
+    background-color: orange;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid gray;
+    padding: 5px;
+    text-align: center;
+}

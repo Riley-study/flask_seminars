@@ -16,15 +16,14 @@ def home_page():
 def bakery():
     return render_template('bakery.html')
 
-
-@app.route('/meat_pies/')
-def meat_pies():
-    return render_template('meat_pies')
+@app.route('/pies/')
+def pies():
+    return render_template('pies.html')
 
 
 @app.route('/snacks_and_salads/')
 def snacks_and_salads():
-    return render_template('snacks_and_salads')
+    return render_template('snacks_and_salads.html')
 
 
 if __name__ == '__main__':
