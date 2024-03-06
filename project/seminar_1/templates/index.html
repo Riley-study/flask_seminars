@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{age}}</td>
+        <td>{{rate}}</td>
+    </tr>
+    {% for student in students_list %}
+    </tr>
+    <td>{{student.name}}</td>
+    <td>{{student.surname}}</td>
+    <td>{{student.age}}</td>
+    <td>{{student.rate}}</td>
+    </tr>
+    {%endfor%}
+</table>
+</body>
+</html>
