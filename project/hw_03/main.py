@@ -34,20 +34,20 @@ def register():
         lastname = form.lastname.data
         email = form.email.data
         password = form.password.data
-        # добавляем хеширование пароля, сохраняем в бд хэш вариант
+        # добавляем хеширование пароля, в бд сохранится хэш вариант
         hashed_password = generate_password_hash(password)
         user = User(firstname=firstname, lastname=lastname, email=email, password=hashed_password)
+        # записываем данные в бд
         db.session.add(user)
         db.session.commit()
         return f'Вы зарегистрированы'
     return render_template('register.html', form=form)
 
 
+
+# для проверки по пути /users/ можно также посмотреть сколько пользователей в базе
 @app.route('/users/', methods=['GET', 'POST'])
 def add_users():
     users = User.query.all()
     return f'{list(users)}'
 
-# new_user = User(username='john_doe', email='john.doe@example.com')
-# db.session.add(new_user)
-# db.session.commit()
