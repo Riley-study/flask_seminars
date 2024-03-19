@@ -9,6 +9,7 @@ import os
 import threading
 import requests
 import time
+import sys
 
 
 urls = [
@@ -20,7 +21,6 @@ urls = [
     'https://habrastorage.org/r/w1560/webt/xh/7m/8n/xh7m8nokzhgfqixb00fnwcmkthm.jpeg',
 ]
 
-
 def download_picture(url_picture):
     response = requests.get(url_picture)
     if response.status_code == 200:
@@ -30,6 +30,15 @@ def download_picture(url_picture):
             file.write(response.content)
         print(f'Image downloaded successfully and saved as {image_name}')
     print(f"Downloaded {url_picture} in {time.time() - start_time:.2f} seconds")
+
+
+def add_args():
+    global urls
+    for arg in sys.argv:
+        if arg != '':
+            urls.append(arg)
+    return urls
+
 
 
 threads = []
